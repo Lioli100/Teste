@@ -1,0 +1,303 @@
+Curso de Git
+
+Seção 1: Entendendo o que é Git e Github
+	► Introdução
+		Git é o sistema de controle de versão de arquivos mais utilizado no mundo. Através deles podemos desenvolver projetos na qual diversas pessoas podem contribuir simultaneamente no mesmo, editando e criando novos arquivos e permitindo que os mesmos possam existir sem o risco de suas alterações serem sobrescritas.
+		• Nesse curso iremos aprender como utilizar o Git em nossos projetos e como fazer a ligação do mesmo com o Github, a mais famosa rede social para código opensource.
+			→ O que você aprenderá
+				Saber a história do Git
+				Como configurar o Git e seus comandos básicos
+				Como trabalhar com diferentes branches num projeto
+				Como trabalhar com repositórios remotos no Github
+				
+			→ Há algum requisito ou pré-requisito para o curso?
+				Windows, Linux ou OSX
+				Conhecimento básico de terminal ou prompt de comando
+				Vontade de aprender
+				
+			→ Para quem é este curso:
+				O curso é destinado para qualquer desenvolvedor que esteja começando a trabalhar com sistemas de versionamento.
+		
+	► O que é o Git	
+		É o sistema de controle de versão;
+		
+	► O que é o Github	
+		Local na web onde consigo armazenar meus projetos versionados em Git, esse também é tratado como se fosse uma rede social onde disponibilizamos nosso código para outras pessoas. 
+
+Seção 2: Configurando o Git		
+	► Instalnado o Git	
+		https://git-scm.com/downloads
+		baixa, executa e next, next.
+	► Ferramentas que iremos instalar:
+		Chrome
+		Edge
+		Microsoft Visual Code
+			Assisto outras aulas para configurar o Visual Studio
+			
+		Git SCM    (Source Code Manangement), baixo em git-scm.com
+			Escolho a versão e o S.OSX
+			Na primeira tela eu clico em Next; 
+			Na segunda eu mantenho a mesma pasta sugerida que é a " c:\Program Files\Git ";
+			Na próxima que é para selecionar os " components " eu não mudo nada e clico em Next;
+			Na próxima escolho a versão do Visual Studio que eu baixei que é o " Use Visual Code as Git´s defaut editor "
+			Na próxima para ajustar o caminho eu deixo o defaut que é " Git from the command line and also from 3rd-party software " e clico em Next;
+			Na próxima para escolher o HTTPS transport backend eu deixo o que está que é o " Use the OpenSSL library " e clico em Next
+			Na próxima para configurar a linha ending conversions deixo a que está " Checkout Windows-style, commit Unix-style line endings ";
+			Na Próximos para configurar o terminal que é o emulador para usar com o Git Bash e escolho a opção " Use MinTTY(the default terminal of MSYS2) " e clico em Next;
+				Apesar que eu posso usar o MSTSC
+			Na próxima para configurar as opções extras deixo duas opções marcadas que são: " Enable file system cahcing e Enable Git Credential Manager " e clico no Instalar.
+			Depois de instalado não há necessidade de iniciar o Git Bash, pois nós vamos usar o Git Desktop, apesar de poder usar esse Git Bash.
+			
+		Git Desktop  (baixa no desktop.github.com)
+			Escolho a versão e o S.OSX
+			Clico duas vezes e ele já abre a tela de configuração para preenchimento dos dados; 
+			Depois de instalado eu clico em " Sign in to GitHub.com "
+			Na sequência eu, já com a conta no Git e Github, eu faço o preenchimento do user e pwd e clico em " Sign in "
+			Na sequência ele pedirá para colocar um e-mail, porém vc poderá tirar o sugerido que tem caracteres especiais e colocar o próprio teu que foi cadastrado no Github ou deixa o sugerido e clica em " Continuar "
+			Então clico em finalizar e deixo ou não marcado para ajudar a comunidade;
+			Com isso irá abrir o GitDesktop.
+			
+	► Usando o Git Desktop:
+		Abra o Git Desktop e clica em " Create a New Repository on your hard drive... ";
+		Preencho os campos:
+			Dê um nome para o repositório (pasta), descrição, no campo " Local path " digo qual é o caminho e posso ou não mudar o nome sugerido que é o " Github ";
+			Marco a opção de " Initialize this repository with a README "
+			No campo " Git ignore " vamos deixar para outra aula e não mudar nada, deixe como " None ";
+			NO campo " License " deixo como " MITLicense";
+			Na sequência clicamos no botão " Create Repository "
+			Pronto, se eu for no diretório eu já vejo que foi criado a pasta tal.
+			Na sequência não foi atualizado ainda no Git pq nós apenas criamos foi um repositório local, pois agora vamos subir para o repositório remoto;
+			Depois que eu crio o repositório eu posso analisar a aba History e em seguida clico no botão " Publish repository "
+			Nessa hora eu desmarco ou não o campos " Keep this code private ";
+			Pronto, com isso se eu for no meu Git remoto e atualizar o Repostitories, vai aparecer o que eu subi.
+			Na sequência eu já posso abrir, através do Visual Studio Code, esse repositório, clicando no botão " Open in Visual Studio Code ".
+			
+	► Gerenciando o Git local 
+		Você pode gerenciar atraves do botão " Controle de código fonte " do Visual Studio Code, porém isso nós vamos fazer pelo Git Desktop, como segue;
+		Abro o Git Desktop
+			Primeiro edito qualquer coisa pelo Visual Studio, ex: o Readme, pois automáticamente já aparece no controle do código fonte do visual studio e se eu for no Git desktop, também já aparecerá lá.
+			Com isso ainda não foi versionado, então vou no Git Desktop na área de versionamento, dou um nome de descrição e no campo descrição digito o necessário e clico no botão " Commit to master ";
+			Com isso ele manda para o Git local e para mandar para o servidor remoto, clicando no botão " Push origin "
+			Pronto, com isso já estará no meu repositório remoto. 
+		Editando o arquivo que eu acabará de dar um push;
+			Abro meu Git Remoto e clico no lápis de editar, pois ele abrirá um editor para fazermos uma alterações, pois talvez estaremos na rua e precisamos fazer algo rápido. 
+			Com isso vou em baixo e faço o commint, dando uma descrição, para então commitar, clicando no botão " Commit Changes ", pois essa alteração eu estou fazendo diretamente pelo Git remoto.   
+			Se eu for no código, não aparece no repository local;
+			Agora eu abro o Git desktop e clico em " Fetch origin ", para comparar meu servidor local com o remoto. 
+			Feito isso, vai aparecer a opção para eu fazer um Pull, clicando no botão " Pull origin "
+		Fechando sem querer os Git local ou remoto:
+			Abra o Git Desktop e loga no git local novamente e clica com o " Open visual studio code ".
+			Pois estará tudo cincronizado e não perdeu nada. 
+			Posso criar novos arquivos dentro do teu projeto e aí é só ir Commitando e dando Push ou Pull.
+			Eu fazendo essas alterarções no Visual Studio já aparece no Git Desktop, então novamente commito e na sequência push.
+			Vou no repository remoto e vejo as alterações. 
+			Quando eu altero o código aparece o " U de Untracked " e depois que ele já existir vai aparecer em vez de " U " o " M de modified ".
+			Se eu for commitar eu só dou uma descrição e preciono " Ctrl + Enter ", com isso ele irá comitar. 
+			Depois de comitado é só clicar " Ctrl + P ", para dar um push no meu repository.
+		
+			
+	► Configuração inicial do Git
+		• Locais do Git
+			São três:	
+				Git config do sistema como um todo
+				Git config do usuário
+				Git config do projéto
+			Configurando o Git	
+				git config -- global user.name "Mario Lioli Pacheco"
+				git config -- global user.email "pacheco.lioli@gmail.com"
+				git config -- global core.editor vim (lembrando se eu não configurar nada ele deixa em editor padrão como vim)
+			Conferindo a configuração
+				git config user.name
+					para saber o nome de usuário
+				git config user.email
+					para saber o e-mail
+				git config --list
+					para saber de todos os dados
+				git config --global http.proxy http://<proxyUsername>:<proxyPassword>@<proxyServer>:<port>                              (mario.mlp:senah@proxy.pmfi....)
+					
+
+Seção 3: Essencial do Git					
+	► Próximos passos - Iniciando o projeto
+		crio um diretório (repositório, ou seja, uma pasta)
+			mkdir curo-Rocktseat
+		Entro na pasta
+			cd curo-Rocktseat
+		Inicio o projeto
+			git init
+		executo o comando
+			ls -la
+		entro na pasta criada
+			cd .git/
+		executo o comando
+			ls
+			
+	► Editando arquivo dentro do projeto 
+			vi <nome arquivo, ex:Redme>
+			para inserir
+				i 
+			para sair
+				Esc
+			apertar as teclas
+				:wq = escrever e sair
+				
+	► Ciclo de vida dos status de seus arquivos
+		→ untracked    = arquivo acabou de ser adicionado no repositório porém o Git não conhece esse arquivo ou versão
+			para isso eu preciso add the file para mudar o status e o Git conhe lo
+			se eu remove the file ele sai de unmodified e volta a ter o status de untracked
+		→ unmodified
+			se eu editar ele passa a ser modified e depois posso jogar esse arquivo numa area que será criado uma versão, que é a area chamada de state
+		→ modified
+			Foi anteriormente editado e passou para esse state
+		→ staged
+			se eu der um commit ele passa a ser novamente untracked
+		► Trabalhando no Git para evoluir nos states
+			→ ls         = lista arquivos
+			→ git status = serve para repostar o como está o repositório no momento
+				com o comando a cima aparecerá 
+					On branch master   = estou no branch master 
+					Initial Commit     = ainda não tive comite, estou no initial
+					nothing to commit (create/copy files and use "git add" to track) = não tenho nada para comitar.
+			
+			→ Então não tendo nada para comitar vou criar primeiro o arquivo
+				vim Readme.md
+				edito ele e salvo
+				executo "git status" novamente e ele me dará outro valores como segue
+					On branch master   = estou no branch master 
+					Initial Commit     = ainda não tive comite, estou no initial
+					Untracked files:   
+						(use "git add <file>..." to include in what will be committed)    = ele viu que meu redme está no untracked
+							redeme.txt
+					nothing to commit (create/copy files and use "git add" to track) = não tenho nada para comitar.
+				
+				→ então eu digito 
+					git add Readme.md   = ele irá adicionar o arquivo e mudar de estado para o unmodified
+					Se eu executar novamente o comando "git status" aparecerá o código abaixo informando que o arquivo já poderá ser comitado
+						On branch master
+					
+					No commits yet
+
+					Changes to be committed:
+					  (use "git rm --cached <file>..." to unstage)
+							new file:   Readme.md
+							
+					
+				→ Se eu editar o arquivo novamente ele informará que eu devo add novamente para poder comitar, ou seja, toda vez que altero tenho que add para passar de estado 	
+					Changes not staged for commit:
+						  (use "git add <file>..." to update what will be committed)
+						  (use "git restore <file>..." to discard changes in working directory)
+								modified:   Readme.md
+								
+				→ Agora é hora de comitar	
+					git commit -m "Add Readme.md"     
+						Etendendo o código acima
+							git             = versionador
+							commit          = vou atualizar ou serja, é o momento que vamos avisar o Git, pegue todos os arquivos do meu repositório e crie uma versão dele.  
+							-m              = significa que eu vou passar uma mensagem
+							"Add Readme.md" = é a mensagem própriamente dita (é importante colocar essas mensagens do que nós fizemso, ex: remov, add, modify etc, isso para quem vou trabalhar com seu código saiba se localizar melhor)
+						Depois de dar o enter aparecerá o que segue:
+							[master (root-commit) b2e2e7c] Add Readme.md
+							 1 files changed, 10 insertions(+)
+							 create mode 100644 Readme.md
+							 Entendendo o código
+								ele diz que estamos no master no local atual foi criado um commit com a rech e com os comentários que tem um número que nunca será igual que é uma identificação da versão, depois ele disse que 1 arquivofoi modificado com o número das inserções que são as linhas que eu editei. Por último ele diz o create mode
+						Se eu voltar agora e novamente executar o comando git status a mensagem a baixo aparecerá	
+							On branch master
+							nothing to commit, working directory clean  isso é como se ele limpasse tudo, ai vc terá que editar novamente e começar os passos acima outra vez. 
+							
+	► Visualizando logs
+		git log --author="Will" = esse comando trás por autor que  tenha o nome de Will (mostra os comites)
+		git shortlog            = Mostra todos que comitaram
+		git shortlog -sn        = para ver a quantidade de comite e a pessoa
+		git log --graph         = mostra de forma gráfica o que acontece com minhas versões e branches
+		Falamos que dentro do git log temos uma ref e com isso conseguimos identificar o que aconteceu nesse comite, o que foi add o que não foi. 
+			copio a hash e colo ela apos o comando abaixo:
+				git show <colo a hash aqui> e dou um enter.
+		Obs: git log temos que usar sempre que precisar, pois ele nos dá informações importantes. 
+	
+	► Visualizando o diff
+		Comando para ver as alterações antes de enviar para o github pois esse comando nós conseguimos ver alterações antes de comitar
+			git diff
+		Sempre devemos usar o comando acima para ver se realmente não vamos comitar algo errado. 
+		O comando abaixo é para mostrar somente o nome do arquivo uqe foi alterado
+			git diff --name-only
+		Com isso eu executo o comando para comitar	
+			1º git status
+			2º git commit -am "Edit Readme"
+				aparecerá assim: 
+					[master b4..] Edit Readme
+					1 file changed, 3 insertions(+)
+ 	► Desfazendo coisas
+		Resetando nossos erros antes de comitar ou que fizemos da última vez	
+			git log
+			git status vem vazio
+			vim Readme.txt
+			git status agora aparecerá que tenho algo para commitar
+			git diff com isso vejo o que foi alterado então digito o comando para voltar antes da editção, coso eu não quero fazer a última edição, por ter me enganado, basta digitar o comando	
+				git checkout Readme.txt
+					esse comando é antes de adicionar para comitar
+		Para tirar arquivo da fila do state
+			git reset HEAD Readme.txt
+				Esse comando é para depois que deu o comando "git add Readme.txt"
+			git diff só aparece antes de eu add para comitar
+		Para eu voltar o que eu já comitei exitem 3 situções de comando	
+			git reset --soft --mixed --hard
+			o -soft = só mata o comite e voltar um estágio para recomitar
+			o --mixed = mata o comite e voltar 2 níveis para o state add para comitar 
+			o --hard = mata tudo que foi feito, comite, add, e alterções no arquivo. 
+			Usando cada comando	
+				1º dou git log e pego a resh do último comite e colo no final do comando abaixo
+				git reset --soft ....	
+				Assim para o mixed e hard 
+				obs: o git hard eu uso somente em últimos casos e antes de eu ter subidor para o github para não dar confusão no histórico e outros problemas.
+				
+Seção 4: Repositórios Remotos
+	► Criando um reposítório no Git
+	
+	► Criando e adcionando uma chave SSH
+	
+	► Ligando repositório local a um remotos
+	
+	► Enviando mudanças para um repositório remoto
+	
+	► Clonando repositórios remotos
+	
+	► Fazendo fork de um projeto
+	
+Seção 5: Ramificação (Branch)
+	► O que é um branch e por que usar?
+	
+	► Criando um branch
+	
+	► Movendo e deletando branches
+	
+	► Entendendo o Merge
+	
+	► Entendendo o Rebase
+	
+	► Merge e Rebase na prática
+	
+Seção 6: Extras
+	► Criando o .gitignore
+	
+	► Git stash é lindo
+	
+	► alias para que te quero
+	
+	► Versionando com Tags
+	
+	► salvando sua sexta com Git Revert
+	
+	► Apagando tags e branches remotos
+	
+	
+						
+							
+							
+					
+			
+			
+		
+		
+		
+	
+	
